@@ -20,7 +20,7 @@
     "build:storybook": "build-storybook -s public --no-dll -o build/storybook",
     "build": "npm run build:app && npm run build:storybook",
     "stylelint": "stylelint \"**/*.{js,jsx,css}\"",
-    "eslint": "eslint \"**/*.{js,jsx}\"",
+    "eslint": "eslint \"**/*.{js,jsx}\" --max-warning-0",
     "prettier": "prettier --check \"**/*.{js,jsx,ts,tsx,md,mdx,html,css,json}\"",
     "test:watch": "react-scripts test",
     "test": "react-scripts test --watchAll=false && npm run stylelint && npm run eslint && npm run prettier",
@@ -74,8 +74,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "npm test"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
